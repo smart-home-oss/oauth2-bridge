@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  user:
+    image: smart-home-oss/oauth2-bridge:latest
+    container_name: oauth2-bridge-um-shoss
+    build: ./
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.oauth2.rule=Host(`oauth2.localhost`)"
+      - "traefik.http.routers.oauth2.entrypoints=web"
+    ports:
+      - 7002:7002
+
+networks:
+  smarthomeoss:
+    external: true

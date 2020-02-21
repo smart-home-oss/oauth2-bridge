@@ -1,0 +1,18 @@
+language: java
+jdk: openjdk11
+
+cache:
+  directories:
+    - $HOME/.m2
+
+env:
+  global:
+    - secure: "s67kGx2IO8mVjWzx+GIrt7bqisgZWi1r3pasOavxE27UuqmGxv+/U5xHkMy/Bp4LnO4DgbBJgDQklx370Rfcm38eBQ8fhgZrDJDpBqPk9Tr4nnty7eaN9ss5B7t25ADIcckWM8/xI0yvPh92WVvqdO08U0gHyDVSgg/VI7f25lHaVCuuc9S+dmHLeFW4bkKrqObaKfcJfY7Tv+mgZMtwCix3OIXtNEQtIL52InyUMPiEbpK2xDWdX0S0FLIT0PT83bX4K2E7OXGeZgpkf0p6/NYndklr6CM4DtZ2WgbsJTzUIbpP8ihBHGFZl3J0LjnMDZLyzNZ+rnoCwrMN1lcfiez7PFemWRffxGvk80pGjLJzkr+Vq2KDPNnEStCNM/EzeornW+Pu5jhdmy4ft8y1Tw0B2FI1kzM5mjNPQcjfe6ZaALqp1bsaLxBjE+8DVOhYRdMAqbehvmb7RkRW09kPt9i0wSozo+ymjYfl9r/37RR7UfIdBIrMPUUmM1lAVj8B6ypBGc0Uzkcy4AaUH5ayJ7+dNTlAKq/CSTDYDeCRnjCYAju0PMCFBacz2oMCI2Awu6L/eh1CuX/58fx6z+OCXV5UqyuTGPuGq7IXDchJ1Pxvm/UXpAKoGi50xRkKlG/P62vWshRxV8TDVh9glHh2cVuPADUUyuUlqfUQvw705uo="
+
+addons:
+  sonarcloud:
+    organization: "smart-home-oss"
+    token:
+      secure: $SONAR_KEY_SECURE
+
+script: mvn verify sonar:sonar -q
