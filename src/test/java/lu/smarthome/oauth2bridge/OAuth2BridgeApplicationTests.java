@@ -1,10 +1,10 @@
-package lu.smarthome.usermanager;
+package lu.smarthome.oauth2bridge;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UserManagerApplicationTests {
+class OAuth2BridgeApplicationTests {
 
 	@Test
 	void contextLoads() {
