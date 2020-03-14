@@ -3,7 +3,7 @@ version: '3'
 services:
   user:
     image: smart-home-oss/oauth2-bridge:latest
-    container_name: oauth2-bridge-um-shoss
+    container_name: oauth2-bridge-shoss
     build: ./
     labels:
       - "traefik.enable=true"
